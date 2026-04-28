@@ -14,7 +14,7 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Phantom-SIEM API", version="1.0.0")
 
-# SECURITY: Allow frontend to talk to backend
+# Allow frontend to talk to backend
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000"],
@@ -47,7 +47,7 @@ async def ingest_log(log: LogEntry, db: Session = Depends(get_db)):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-# NEW ROUTE: Fetch logs for the dashboard
+# Fetch logs 
 @app.get("/api/v1/logs")
 async def get_logs(limit: int = 50, db: Session = Depends(get_db)):
     logs = db.query(DBLogEntry).order_by(DBLogEntry.id.desc()).limit(limit).all()
