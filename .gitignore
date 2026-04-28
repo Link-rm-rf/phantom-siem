@@ -7,7 +7,7 @@ venv/
 __pycache__/
 *.pyc
 
-# Database (Don't upload your local DB)
+# Database 
 *.db
 siem.db
 
