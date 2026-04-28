@@ -8,13 +8,13 @@ IPS = ["192.168.1.15", "10.0.0.55", "172.16.0.4", "45.22.19.11", "10.10.10.7"]
 EVENTS = ["web_request", "login_attempt", "api_call", "file_upload"]
 
 PAYLOADS = [
-    # --- Clean Traffic ---
+    # Clean Traffic 
     "GET /index.html HTTP/1.1",
     "POST /api/settings {'theme': 'dark'}",
     "GET /images/avatar.png HTTP/1.1",
     "GET /dashboard HTTP/1.1",
     
-    # --- Malicious Traffic ---
+    #  Malicious Traffic 
     "GET /login?user=admin' OR 1=1--",                   # SQLi
     "POST /comment <script>alert('pwned')</script>",     # XSS
     "GET /../../../../etc/passwd",                       # Path Traversal
@@ -42,7 +42,7 @@ try:
         except Exception:
             print("❌ Connection refused. Is the backend running?")
             
-        # Wait between 0.5 and 2 seconds before the next attack
+       
         time.sleep(random.uniform(0.5, 2.0))
 
 except KeyboardInterrupt:
