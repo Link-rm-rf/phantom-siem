@@ -1,6 +1,6 @@
 # Phantom-SIEM
 
-A custom, lightweight SIEM (Security Information and Event Management) tool I built to ingest logs, detect threats, and visualize network traffic in real time 
+A custom, lightweight SIEM (Security Information and Event Management) tool to ingest logs, detect threats, and visualize network traffic in real time 
 
 I built this full-stack project to demonstrate how a Security Operations Center (SOC) processes and flags malicious traffic under the hood
 
